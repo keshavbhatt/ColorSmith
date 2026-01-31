@@ -11,6 +11,14 @@ A modern, elegant color picker application built with Qt for Linux.
 - 🎚️ **Precision Controls**: Adjust RGB values using sliders and spin boxes
 - 💾 **Settings Persistence**: Remembers your last used color
 
+## Screenshots
+
+![ColorSmith Main Window](https://github.com/keshavbhatt/colorsmith/blob/main/images/1.png?raw=true)
+
+![Gradient generator](https://github.com/keshavbhatt/colorsmith/blob/main/images/2.png?raw=true)
+
+![Gradient generator radial](https://github.com/keshavbhatt/colorsmith/blob/main/images/3.png?raw=true)
+
 ## Building from Source
 
 ### Prerequisites
