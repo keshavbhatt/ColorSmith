@@ -91,6 +91,14 @@ cmake -DBUILD_TESTING=ON ..
 
 ## Installation
 
+### Snap Store
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/colorsmith)
+
+```bash
+sudo snap install colorsmith
+```
+
 ### From Source
 
 After building, install with:
