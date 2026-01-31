@@ -1,0 +1,70 @@
+# Build directories
+build/
+build-*/
+cmake-build-*/
+
+# Qt generated files
+*.autosave
+*.user
+*.user.*
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+*.qm
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+CPackConfig.cmake
+CPackSourceConfig.cmake
+_CPack_Packages/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Compiled Object files
+*.o
+*.obj
+*.ko
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+colorsmith
+colourofqt
+
+# Package files
+*.deb
+*.rpm
+*.tar.gz
+*.zip
+
+# Core dumps
+core
+core.*
+
+# Backup files
+*.bak
+*.orig
