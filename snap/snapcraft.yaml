@@ -33,6 +33,8 @@ parts:
   colorsmith:
     source: .
     plugin: cmake
+    build-packages:
+      - libxkbcommon-dev
 
     cmake-parameters:
       - -DCMAKE_BUILD_TYPE=Release
