@@ -4,12 +4,41 @@ A modern, elegant color picker application built with Qt for Linux.
 
 ## Features
 
+### Color Picking & Selection
 - 🎨 **Screen Color Picker**: Pick colors from anywhere on your screen using native portal integration
-- 🎲 **Random Colors**: Generate random colors for inspiration
-- 🔄 **Format Conversion**: Convert between HEX and RGB color formats
+- 🎨 **HSV Color Plane**: Interactive 2D color plane for precise color selection
+- 🔆 **Brightness Slider**: Adjust color brightness with dedicated slider control
+- 🎲 **Random Color Generator**: Generate random colors for inspiration
+- 📐 **RGBA Support**: Full support for alpha channel transparency
+
+### Color Formats & Conversion
+- 🔄 **Format Conversion**: Convert between HEX, RGB, and RGBA color formats
 - 📋 **Clipboard Support**: Copy color values with one click
+
+### Gradient Maker
+- 🌈 **Linear & Radial Gradients**: Create beautiful linear and radial gradients
+- 🎨 **Multi-Stop Gradients**: Add, remove, and adjust unlimited gradient stops
+- 🔄 **Gradient Rotation**: Control gradient angle (0-360°)
+- 🎲 **Random Gradients**: Generate random gradient combinations
+- 📤 **CSS Export**: Copy gradient as CSS code for web development
+- 📄 **SVG Export**: Copy or export gradients as SVG files
+- 🖼️ **Image Export**: Export gradients as PNG images with custom dimensions
+- 👁️ **Fullscreen Preview**: View gradients in fullscreen mode
+
+### Palette Management
+- 🎨 **Color Palettes**: Create and manage multiple color palettes
+- ➕ **Quick Add**: Add current color to palette with one click
+- 🖼️ **Image Color Extraction**: Generate palettes from images using K-means clustering
+- 💾 **Import/Export**: Import and export palettes in JSON format
+- ✏️ **Palette Operations**: Create, rename, delete, and clear palettes
+- 🔖 **Named Colors**: Add optional names to palette colors
+- 📚 **Multiple Palettes**: Switch between different palettes easily
+
+### User Interface
 - 🎚️ **Precision Controls**: Adjust RGB values using sliders and spin boxes
-- 💾 **Settings Persistence**: Remembers your last used color
+- ⌨️ **Keyboard Shortcuts**: Comprehensive keyboard navigation and shortcuts
+- 💾 **Settings Persistence**: Remembers your last used color and window geometry
+- 🎨 **Intuitive Design**: Clean, modern Qt-based interface
 
 ## Screenshots
 
