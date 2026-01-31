@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.ktechpit.colorsmith</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>ColorSmith</name>
+  <summary>A modern color management application</summary>
+
+  <description>
+    <p>
+      ColorSmith is a simple and elegant application for picking and managing colors.
+      It provides an intuitive interface to select colors from your screen, convert between
+      color formats (HEX, RGB), and copy color values to your clipboard.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Pick colors from anywhere on your screen using screen picker</li>
+      <li>Adjust RGB values with sliders and spin boxes</li>
+      <li>Convert between HEX and RGB color formats</li>
+      <li>Generate random colors for inspiration</li>
+      <li>Copy color values to clipboard with one click</li>
+      <li>Remember your last used color</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">colorsmith.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/keshavbhatt/colorsmith/blob/main/images/1.png?raw=true</image>
+      <caption>Main window showing color management interface</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/keshavbhatt/colorsmith/blob/main/images/2.png?raw=true</image>
+      <caption>Showing Gradient Maker Window</caption>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/keshavbhatt/colorsmith</url>
+  <url type="bugtracker">https://github.com/keshavbhatt/colorsmith/issues</url>
+
+  <provides>
+    <binary>colorsmith</binary>
+  </provides>
+
+  <categories>
+    <category>Graphics</category>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>color</keyword>
+    <keyword>picker</keyword>
+    <keyword>rgb</keyword>
+    <keyword>hex</keyword>
+    <keyword>palette</keyword>
+  </keywords>
+
+  <releases>
+    <release version="1.0.0" date="2026-01-27">
+      <description>
+        <p>Initial release</p>
+        <ul>
+          <li>Color picking from screen</li>
+          <li>RGB and HEX color format support</li>
+          <li>Random color generation</li>
+          <li>Settings persistence</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1" />
+</component>

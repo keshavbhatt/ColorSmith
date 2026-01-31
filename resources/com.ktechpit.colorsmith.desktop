@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=ColorSmith
+GenericName=Color Manager
+Comment=Pick and manage colors with ease
+Keywords=color;picker;rgb;hex;design;graphics;
+Exec=colorsmith
+Icon=com.ktechpit.colorsmith
+Terminal=false
+Categories=Graphics;Utility;Qt;
+StartupNotify=true
+StartupWMClass=colorsmith
