@@ -141,21 +141,6 @@ install(FILES
     OPTIONAL
 )
 
-# CPack configuration for package generation
-set(CPACK_PACKAGE_NAME "colorsmith")
-set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${PROJECT_DESCRIPTION}")
-set(CPACK_PACKAGE_VENDOR "Ktechpit")
-set(CPACK_PACKAGE_CONTACT "connect@ktechpit.com")
-set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/LICENSE")
-set(CPACK_RESOURCE_FILE_README "${CMAKE_SOURCE_DIR}/README.md")
-
-# Debian package specific
-set(CPACK_DEBIAN_PACKAGE_DEPENDS "qt6-base-dev, qt6-base-abi-6-6-2")
-set(CPACK_DEBIAN_PACKAGE_SECTION "graphics")
-set(CPACK_DEBIAN_PACKAGE_PRIORITY "optional")
-
-include(CPack)
 
 # Uninstall target
 if(NOT TARGET uninstall)
