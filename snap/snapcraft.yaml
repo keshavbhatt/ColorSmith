@@ -1,0 +1,54 @@
+name: colorsmith
+version: '1.0.0'
+summary: A modern color management application
+description: |
+  ColorSmith is a simple and elegant application for picking and managing colors.
+  It provides an intuitive interface to select colors from your screen, convert between
+  color formats (HEX, RGB), and copy color values to your clipboard.
+
+grade: stable
+confinement: strict
+base: core24
+compression: lzo
+
+icon: snap/gui/icon.png
+
+platforms:
+  amd64:
+  arm64:
+
+apps:
+  colorsmith:
+    command: usr/bin/colorsmith
+    desktop: usr/share/applications/com.ktechpit.colorsmith.desktop
+    common-id: com.ktechpit.colorsmith
+    extensions:
+      - kde-neon-6
+    plugs:
+      - home
+      - network
+      - opengl
+
+parts:
+  colorsmith:
+    source: .
+    plugin: cmake
+
+    cmake-parameters:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_INSTALL_PREFIX=/usr
+
+    override-build: |
+      craftctl default
+
+      # Fix desktop icon path for snapped environment
+      sed -i \
+        "s|^Icon=.*|Icon=\${SNAP}/meta/gui/icon.png|" \
+        ${CRAFT_PART_INSTALL}/usr/share/applications/com.ktechpit.colorsmith.desktop
+
+    prime:
+      - -usr/include
+      - -usr/lib/*/cmake
+      - -usr/share/ECM
+      - -usr/share/man
+      - -usr/share/lintian
