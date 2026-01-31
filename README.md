@@ -42,11 +42,9 @@ A modern, elegant color picker application built with Qt for Linux.
 
 ## Screenshots
 
-![ColorSmith Main Window](https://github.com/keshavbhatt/colorsmith/blob/main/images/1.png?raw=true)
-
-![Gradient generator](https://github.com/keshavbhatt/colorsmith/blob/main/images/2.png?raw=true)
-
-![Gradient generator radial](https://github.com/keshavbhatt/colorsmith/blob/main/images/3.png?raw=true)
+| Main Window | Gradient Generator | Radial Gradient |
+|-------------|-------------------|-----------------|
+| ![ColorSmith Main Window](https://github.com/keshavbhatt/colorsmith/blob/main/images/1.png?raw=true) | ![Gradient generator](https://github.com/keshavbhatt/colorsmith/blob/main/images/2.png?raw=true) | ![Gradient generator radial](https://github.com/keshavbhatt/colorsmith/blob/main/images/3.png?raw=true) |
 
 ## Building from Source
 
