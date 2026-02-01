@@ -260,29 +260,86 @@ void MainWindow::onOutputTextChanged() {
   if (m_programmaticChange)
     return;
 
-  QString text = ui->outputEdit->text();
-  QString mode = ui->comboOutput->currentData().toString();
-  QColor newColor;
+  QString text = ui->outputEdit->text().trimmed();
+  if (text.isEmpty())
+    return;
 
-  if (mode == "hex") {
-    newColor = ColorLogic::hexToColor(text);
-  } else if (mode == "rgb") {
-    newColor = ColorLogic::rgbStringToColor(text);
-  } else if (mode == "rgba") {
-    newColor = ColorLogic::rgbaStringToColor(text);
-  } else if (mode == "hsl") {
-    newColor = ColorLogic::hslStringToColor(text);
-  } else if (mode == "hsla") {
-    newColor = ColorLogic::hslaStringToColor(text);
-  } else if (mode == "hsv") {
-    newColor = ColorLogic::hsvStringToColor(text);
-  } else if (mode == "cmyk") {
-    newColor = ColorLogic::cmykStringToColor(text);
+  QColor newColor;
+  QString detectedFormat;
+
+  // Try to detect the format and parse the color
+  // Try HEX format (most common for pasting)
+  newColor = ColorLogic::hexToColor(text);
+  if (newColor.isValid()) {
+    detectedFormat = "hex";
   }
 
-  if (newColor.isValid()) {
+  // Try RGB format
+  if (!newColor.isValid()) {
+    newColor = ColorLogic::rgbStringToColor(text);
+    if (newColor.isValid()) {
+      detectedFormat = "rgb";
+    }
+  }
+
+  // Try RGBA format
+  if (!newColor.isValid()) {
+    newColor = ColorLogic::rgbaStringToColor(text);
+    if (newColor.isValid()) {
+      detectedFormat = "rgba";
+    }
+  }
+
+  // Try HSL format
+  if (!newColor.isValid()) {
+    newColor = ColorLogic::hslStringToColor(text);
+    if (newColor.isValid()) {
+      detectedFormat = "hsl";
+    }
+  }
+
+  // Try HSLA format
+  if (!newColor.isValid()) {
+    newColor = ColorLogic::hslaStringToColor(text);
+    if (newColor.isValid()) {
+      detectedFormat = "hsla";
+    }
+  }
+
+  // Try HSV format
+  if (!newColor.isValid()) {
+    newColor = ColorLogic::hsvStringToColor(text);
+    if (newColor.isValid()) {
+      detectedFormat = "hsv";
+    }
+  }
+
+  // Try CMYK format
+  if (!newColor.isValid()) {
+    newColor = ColorLogic::cmykStringToColor(text);
+    if (newColor.isValid()) {
+      detectedFormat = "cmyk";
+    }
+  }
+
+  if (newColor.isValid() && !detectedFormat.isEmpty()) {
+    // Switch combo box to the detected format
+    QString currentMode = ui->comboOutput->currentData().toString();
+    if (currentMode != detectedFormat) {
+      // Find and set the correct format in combo box
+      for (int i = 0; i < ui->comboOutput->count(); ++i) {
+        if (ui->comboOutput->itemData(i).toString() == detectedFormat) {
+          ui->comboOutput->blockSignals(true);
+          ui->comboOutput->setCurrentIndex(i);
+          ui->comboOutput->blockSignals(false);
+          break;
+        }
+      }
+    }
+
     // Manual color entry should NOT add to recent colors
-    updateColor(newColor, false, false, false);
+    // Update output field to show properly formatted color in the detected format
+    updateColor(newColor, true, false, false);
   }
 }
 
