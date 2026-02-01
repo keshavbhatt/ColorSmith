@@ -142,6 +142,24 @@ PaletteWidget::PaletteWidget(QWidget *parent)
       m_generateFromImageAction(nullptr), m_clearPaletteAction(nullptr),
       m_exportPaletteAction(nullptr), m_importPaletteAction(nullptr) {
   setupUI();
+
+  // Connect to PaletteManager to auto-refresh when colors change in current palette
+  connect(&PaletteManager::instance(), &PaletteManager::paletteColorsChanged,
+          this, [this](Palette *palette) {
+            // Check if this is the current palette by pointer OR if current palette is null
+            // and this is the recently picked palette (handle initialization case)
+            bool shouldRefresh = (palette == m_currentPalette) ||
+                                (!m_currentPalette && palette &&
+                                 palette->id() == PaletteManager::RECENTLY_PICKED_PALETTE_ID);
+
+            if (shouldRefresh) {
+              // If m_currentPalette is null, set it to this palette
+              if (!m_currentPalette && palette) {
+                m_currentPalette = palette;
+              }
+              refreshColors();
+            }
+          });
 }
 
 void PaletteWidget::setupUI() {
@@ -269,15 +287,19 @@ void PaletteWidget::updateLayout() {
   bool isEmpty = m_swatches.isEmpty();
 
   // Show/hide empty state message
-  m_emptyStateLabel->setVisible(isEmpty);
-  m_scrollArea->setVisible(!isEmpty);
+  if (isEmpty) {
+    m_scrollArea->hide();
+    m_emptyStateLabel->show();
+  } else {
+    m_emptyStateLabel->hide();
+    m_scrollArea->show();
 
-  if (!isEmpty) {
     // Add swatches to grid
     int col = 0;
     int row = 0;
     for (ColorSwatch *swatch : std::as_const(m_swatches)) {
       m_gridLayout->addWidget(swatch, row, col);
+      swatch->show(); // Ensure swatch is visible
       col++;
       if (col >= MAX_COLUMNS) {
         col = 0;
@@ -287,6 +309,12 @@ void PaletteWidget::updateLayout() {
   }
 
   m_gridWidget->adjustSize();
+  m_gridWidget->updateGeometry();
+  m_scrollArea->updateGeometry();
+  m_contentWidget->updateGeometry();
+
+  // Force immediate update
+  update();
 }
 
 void PaletteWidget::setPalette(Palette *palette) {

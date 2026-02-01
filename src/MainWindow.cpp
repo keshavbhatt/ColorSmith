@@ -128,13 +128,6 @@ MainWindow::MainWindow(QWidget *parent)
   PaletteManager::instance().loadPalettes();
   m_paletteWidget->setPalette(PaletteManager::instance().currentPalette());
 
-  // Connect to palette color changes (for recently picked palette updates)
-  connect(&PaletteManager::instance(), &PaletteManager::paletteColorsChanged,
-          this, [this](const Palette *palette) {
-            if (m_paletteWidget->currentPalette() == palette) {
-              m_paletteWidget->refreshColors();
-            }
-          });
 
   // Make statusbar always visible
   statusBar()->show();
