@@ -164,7 +164,7 @@ void MainWindow::updateColor(const QColor &color, bool updateOutputField,
   // Update inputs including alpha
   QSpinBox *spins[] = {ui->spinR, ui->spinG, ui->spinB, ui->spinA};
   QSlider *sliders[] = {ui->sliderR, ui->sliderG, ui->sliderB, ui->sliderA};
-  int values[] = {color.red(), color.green(), color.blue(), color.alpha()};
+  const int values[] = {color.red(), color.green(), color.blue(), color.alpha()};
 
   for (int i = 0; i < 4; i++) {
     spins[i]->blockSignals(true);

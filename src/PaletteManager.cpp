@@ -197,7 +197,7 @@ void PaletteManager::loadPalettes() {
 
   // If no current palette was restored, set a default
   if (!m_currentPalette) {
-    if (Palette *recentPalette = getPalette("recently-picked-colors")) {
+    if (Palette *recentPalette = getPalette(RECENTLY_PICKED_PALETTE_ID)) {
       // Prefer FIFO recent palette when user previously had no selection
       m_currentPalette = recentPalette;
     } else {
@@ -290,7 +290,7 @@ void PaletteManager::addToRecentColors(const QColor &color) {
   // Find the recently picked palette
   Palette *recentPalette = nullptr;
   for (Palette *palette : m_palettes) {
-    if (palette->id() == "recently-picked-colors") {
+    if (palette->id() == RECENTLY_PICKED_PALETTE_ID) {
       recentPalette = palette;
       break;
     }
