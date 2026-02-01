@@ -26,26 +26,18 @@ AboutDialog::AboutDialog(QWidget *parent)
     ui->iconLabel->setPixmap(appIcon.pixmap(64, 64));
   }
 
-  // Set application name and version
   ui->appNameLabel->setText(QString("<h2>%1</h2>").arg(COLORSMITH_APP_NAME));
   ui->versionLabel->setText(
       QString("Version %1").arg(COLORSMITH_VERSION_STRING));
 
-  // Set description
   ui->descriptionLabel->setText(
-      "A simple and elegant color management application for your desktop.<br>"
-      "Pick colors from your screen, generate random colors, and manage your "
-      "color palette with ease.");
+      "A simple and elegant color management application for your desktop");
 
-  // Set copyright and additional info
   ui->copyrightLabel->setText(
       QString("© 2026 %1").arg(COLORSMITH_ORGANIZATION_NAME));
 
-  ui->additionalInfoLabel->setText(
-      "Built with Qt6<br>"
-      "Licensed under the terms specified in the LICENSE file");
+  ui->additionalInfoLabel->setText("Designed and developed by Keshav Bhatt");
 
-  // Connect close button
   connect(ui->closeButton, &QPushButton::clicked, this, &AboutDialog::accept);
 }
 
