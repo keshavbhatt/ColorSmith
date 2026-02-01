@@ -24,15 +24,18 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DCMAKE_INSTALL_PREFIX=/app
-    sources:
+#    sources:
 #      - type: git
 #        url: https://github.com/keshavbhatt/colorsmith.git
 #        tag: v1.0.0
-#        commit: PUT_YOUR_COMMIT_HASH_HERE
-        # For initial testing, you can also use:
-         - type: dir
-           path: .
-    post-install:
-      - install -Dm644 resources/com.ktechpit.colorsmith.appdata.xml /app/share/metainfo/com.ktechpit.colorsmith.appdata.xml
-      - install -Dm644 resources/com.ktechpit.colorsmith.desktop /app/share/applications/com.ktechpit.colorsmith.desktop
-      - install -Dm644 resources/icons/colorsmith.svg /app/share/icons/hicolor/scalable/apps/com.ktechpit.colorsmith.svg
+#        commit: 14cf6efa0f72344edaf858cfc507c2099e666e38
+    sources:
+      #      - type: git
+      #        url: https://github.com/keshavbhatt/colorsmith.git
+      #        tag: v1.0.0
+      #        commit: PUT_YOUR_COMMIT_HASH_HERE
+      # For initial testing, you can also use:
+      - type: dir
+        path: .
+
+# official Flatpak is maintained here : https://github.com/flathub/com.ktechpit.colorsmith
