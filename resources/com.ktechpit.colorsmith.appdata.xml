@@ -76,6 +76,8 @@
 
   <url type="homepage">https://github.com/keshavbhatt/colorsmith</url>
   <url type="bugtracker">https://github.com/keshavbhatt/colorsmith/issues</url>
+  <url type="vcs-browser">https://github.com/keshavbhatt/colorsmith</url>
+  <url type="donation">https://www.paypal.com/ncp/payment/KS3TNDR4XLUE2</url>
 
   <provides>
     <binary>colorsmith</binary>
