@@ -1,0 +1,57 @@
+name: Build Windows Executable
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '6.8'
+        host: 'windows'
+        target: 'desktop'
+        arch: 'win64_msvc2022_64'
+        cache: true
+
+    - name: Setup MSVC
+      uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: x64
+
+    - name: Build Application
+      shell: cmd
+      run: |
+        mkdir build
+        cd build
+        cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=%Qt6_DIR%
+        nmake.
+
+    - name: Prepare Release Directory
+      shell: powershell
+      run: |
+        New-Item -ItemType Directory -Force -Path release
+        Copy-Item "build\colorsmith.exe" -Destination "release\ColorSmith.exe"
+
+    - name: Deploy Qt Dependencies
+      shell: cmd
+      run: |
+        cd release
+        windeployqt --release ColorSmith.exe
+
+    - name: Upload executable
+      uses: actions/upload-artifact@v4
+      with:
+        name: colorsmith-windows-exe
+        path: |
+          release/*
