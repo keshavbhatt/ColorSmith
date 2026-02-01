@@ -42,3 +42,13 @@ AboutDialog::AboutDialog(QWidget *parent)
 }
 
 AboutDialog::~AboutDialog() { delete ui; }
+
+void AboutDialog::on_btnDonate_clicked() {
+  QDesktopServices::openUrl(
+      QUrl("https://www.paypal.com/ncp/payment/KS3TNDR4XLUE2"));
+}
+
+void AboutDialog::on_btnMoreApps_clicked() {
+  QDesktopServices::openUrl(
+      QUrl("https://ktechpit.com/USS/public/products.php"));
+}
