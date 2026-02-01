@@ -122,6 +122,7 @@ install(FILES resources/com.ktechpit.colorsmith.appdata.xml
 if(EXISTS ${CMAKE_SOURCE_DIR}/resources/icons/colorsmith.svg)
     install(FILES resources/icons/colorsmith.svg
         DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/scalable/apps
+        RENAME com.ktechpit.colorsmith.svg
     )
 endif()
 
