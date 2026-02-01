@@ -35,7 +35,7 @@ jobs:
         mkdir build
         cd build
         cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=%Qt6_DIR%
-        nmake.
+        nmake
 
     - name: Prepare Release Directory
       shell: powershell
