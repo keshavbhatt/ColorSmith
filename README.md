@@ -42,9 +42,13 @@ A modern, elegant color picker application built with Qt for Linux.
 
 ## Screenshots
 
-| Main Window | Gradient Generator | Radial Gradient | About Dialog                                                                               |
-|-------------|-------------------|-----------------|--------------------------------------------------------------------------------------------|
-| ![ColorSmith Main Window](https://github.com/keshavbhatt/colorsmith/blob/main/images/1.png?raw=true) | ![Gradient generator](https://github.com/keshavbhatt/colorsmith/blob/main/images/2.png?raw=true) | ![Gradient generator radial](https://github.com/keshavbhatt/colorsmith/blob/main/images/3.png?raw=true) | ![About Dialog](https://github.com/keshavbhatt/colorsmith/blob/main/images/4.png?raw=true) |
+| Main Window | Gradient Generator |
+|-------------|-------------------|
+| ![ColorSmith Main Window](https://github.com/keshavbhatt/colorsmith/blob/main/images/1.png?raw=true) | ![Gradient generator](https://github.com/keshavbhatt/colorsmith/blob/main/images/2.png?raw=true) |
+
+| Radial Gradient | About Dialog |
+|-----------------|--------------|
+| ![Gradient generator radial](https://github.com/keshavbhatt/colorsmith/blob/main/images/3.png?raw=true) | ![About Dialog](https://github.com/keshavbhatt/colorsmith/blob/main/images/4.png?raw=true) |
 
 ## Building from Source
 
@@ -163,15 +167,9 @@ This project is licensed under the GNU General Public License v3.0 or later. See
 
 If you find ColorSmith useful, consider supporting its development!
 
-<div align="center">
-
-### Donate via PayPal
-[![Donate with PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/ncp/payment/KS3TNDR4XLUE2)
-
-### Or scan the QR code
-<img src="https://github.com/keshavbhatt/colorsmith/blob/main/images/ColorSmith%20Don-qrcode.png?raw=true" alt="Donation QR Code" width="250"/>
-
-</div>
+| Donate via PayPal | Or scan the QR code |
+|-------------------|---------------------|
+| [![Donate with PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/ncp/payment/KS3TNDR4XLUE2) | <img src="https://github.com/keshavbhatt/colorsmith/blob/main/images/ColorSmith%20Don-qrcode.png?raw=true" alt="Donation QR Code" width="250"/> |
 
 Your support helps maintain and improve ColorSmith. Thank you! 💙
 
