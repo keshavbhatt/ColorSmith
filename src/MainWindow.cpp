@@ -1,15 +1,15 @@
 #include "../include/MainWindow.h"
 #include "../include/AboutDialog.h"
+#include "../include/BrightnessSliderWidget.h"
 #include "../include/ColorLogic.h"
 #include "../include/ColorPreviewWidget.h"
-#include "../include/qthsvrectpicker.h"
-#include "../include/BrightnessSliderWidget.h"
+#include "../include/GradientMaker.h"
 #include "../include/Palette.h"
 #include "../include/PaletteManager.h"
 #include "../include/PaletteWidget.h"
 #include "../include/ScreenPicker.h"
 #include "../include/Settings.h"
-#include "../include/GradientMaker.h"
+#include "../include/qthsvrectpicker.h"
 #include "ui_MainWindow.h"
 
 #include <QClipboard>
@@ -69,10 +69,12 @@ MainWindow::MainWindow(QWidget *parent)
   connectRGB(ui->spinB, ui->sliderB);
   connectRGB(ui->spinA, ui->sliderA);
 
+  connect(ui->btnResetAlpha, &QPushButton::clicked, this,
+          [this]() { ui->spinA->setValue(255); });
 
   // Create and add new brightness slider widget
   m_brightnessSlider = new BrightnessSliderWidget(this);
-  ui->brightnessLayout->addWidget(m_brightnessSlider);
+  ui->brightnessLayout->insertWidget(0, m_brightnessSlider);
 
   connect(m_brightnessSlider, &BrightnessSliderWidget::colorChanged, this,
           &MainWindow::onBrightnessColorChanged);
@@ -84,13 +86,16 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui->outputEdit, &QLineEdit::textChanged, this,
           &MainWindow::onOutputTextChanged);
 
+  connect(ui->btnCopyColor, &QPushButton::clicked, this,
+          &MainWindow::onCopyClicked);
+
   // Add copy action to the line edit
-  QAction *copyAction = new QAction(this);
-  copyAction->setIcon(QIcon::fromTheme("edit-copy-symbolic"));
-  copyAction->setToolTip(tr("Copy color"));
-  copyAction->setShortcut(QKeySequence::Copy);
-  connect(copyAction, &QAction::triggered, this, &MainWindow::onCopyClicked);
-  ui->outputEdit->addAction(copyAction, QLineEdit::TrailingPosition);
+  // QAction *copyAction = new QAction(this);
+  // copyAction->setIcon(QIcon::fromTheme("edit-copy-symbolic"));
+  // copyAction->setToolTip(tr("Copy color"));
+  // copyAction->setShortcut(QKeySequence::Copy);
+  // connect(copyAction, &QAction::triggered, this, &MainWindow::onCopyClicked);
+  // ui->outputEdit->addAction(copyAction, QLineEdit::TrailingPosition);
 
   // Replace the placeholder colorPreview QFrame with our ColorPreviewWidget
   m_colorPreview = new ColorPreviewWidget(this);
@@ -140,7 +145,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow() { delete ui; }
 
-void MainWindow::updateColor(const QColor &color, bool updateOutputField, bool skipBrightnessReset, bool addToRecent) {
+void MainWindow::updateColor(const QColor &color, bool updateOutputField,
+                             bool skipBrightnessReset, bool addToRecent) {
   if (!color.isValid())
     return;
 
@@ -250,7 +256,8 @@ void MainWindow::onRgbInputChanged() {
 }
 
 void MainWindow::onOutputModeChanged() const {
-  // Block signals to prevent onOutputTextChanged from firing and changing the color
+  // Block signals to prevent onOutputTextChanged from firing and changing the
+  // color
   ui->outputEdit->blockSignals(true);
   updateOutput();
   ui->outputEdit->blockSignals(false);
@@ -315,8 +322,9 @@ void MainWindow::onResetBrightness() {
     // Update brightness slider widget with base color
     m_brightnessSlider->setColor(m_baseColorForBrightness);
 
-    // Restore the base color without adding to recent colors (skip brightness reset)
-    // Since we're restoring, not picking a new color, we skip the recent colors update
+    // Restore the base color without adding to recent colors (skip brightness
+    // reset) Since we're restoring, not picking a new color, we skip the recent
+    // colors update
     m_currentColor = m_baseColorForBrightness;
 
     // Update color preview widget
@@ -444,7 +452,6 @@ void MainWindow::onAddToPaletteClicked() const {
   }
 }
 
-
 void MainWindow::loadSettings() {
   const Settings::Manager &settings = Settings::Manager::instance();
 
@@ -459,7 +466,6 @@ void MainWindow::loadSettings() {
   if (!state.isEmpty()) {
     restoreState(state);
   }
-
 
   // Restore last color
   if (const QString lastColor = settings.getLastColor(); !lastColor.isEmpty()) {
@@ -486,7 +492,6 @@ void MainWindow::saveSettings() const {
   // Save window geometry and state
   settings.setWindowGeometry(saveGeometry());
   settings.setWindowState(saveState());
-
 
   // Save last color
   settings.setLastColor(ColorLogic::colorToHex(m_currentColor));
