@@ -1,5 +1,7 @@
 #include "../include/PaletteManager.h"
 #include <QDir>
+// ReSharper disable once CppUnusedIncludeDirective
+#include <QJsonDocument>
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QStandardPaths>
