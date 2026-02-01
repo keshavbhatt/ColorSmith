@@ -4,26 +4,56 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <name>ColorSmith</name>
-  <summary>A modern color management application</summary>
+  <summary>Professional color picker, gradient maker, and palette manager</summary>
+
+  <developer id="com.ktechpit">
+    <name>KtechPit</name>
+  </developer>
 
   <description>
     <p>
-      ColorSmith is a simple and elegant application for picking and managing colors.
-      It provides an intuitive interface to select colors from your screen, convert between
-      color formats (HEX, RGB), and copy color values to your clipboard.
+      ColorSmith is a comprehensive color management and design tool for developers, designers, and digital artists.
+      It provides an intuitive interface to pick colors, create gradients, manage palettes, and convert between
+      multiple color formats with professional-grade precision.
     </p>
-    <p>Features:</p>
+    <p>Core Features:</p>
     <ul>
-      <li>Pick colors from anywhere on your screen using screen picker</li>
-      <li>Adjust RGB values with sliders and spin boxes</li>
-      <li>Convert between HEX and RGB color formats</li>
-      <li>Generate random colors for inspiration</li>
-      <li>Copy color values to clipboard with one click</li>
-      <li>Remember your last used color</li>
+      <li>Screen color picker to capture colors from anywhere on your display</li>
+      <li>Interactive HSV color plane with brightness adjustment slider</li>
+      <li>Support for multiple color formats: HEX, RGB, RGBA, HSL, HSLA, HSV, and CMYK</li>
+      <li>Transparency control with alpha channel support</li>
+      <li>Random color generator for creative inspiration</li>
+      <li>One-click color value copying to clipboard</li>
+      <li>Recently picked colors history (FIFO with 24 color limit)</li>
+    </ul>
+    <p>Gradient Generator:</p>
+    <ul>
+      <li>Create linear and radial gradients with unlimited stops</li>
+      <li>Precise control over gradient angles (0-360°) and stop positions</li>
+      <li>Live preview with fullscreen mode support</li>
+      <li>Export as CSS code (with vendor prefixes and old WebKit syntax)</li>
+      <li>Export as SVG files or PNG images with custom dimensions</li>
+      <li>Random gradient generation</li>
+      <li>Color picker integration for gradient stops</li>
+    </ul>
+    <p>Palette Management:</p>
+    <ul>
+      <li>Create and manage multiple custom color palettes</li>
+      <li>Extract color palettes from images using K-means clustering</li>
+      <li>Import and export palettes in JSON format</li>
+      <li>Add optional names to palette colors for better organization</li>
+      <li>Built-in standard HTML colors palette</li>
+      <li>Quick add current color to any palette</li>
+    </ul>
+    <p>Professional Tools:</p>
+    <ul>
+      <li>Comprehensive keyboard shortcuts for efficient workflow</li>
+      <li>Persistent settings that remember window geometry and last used color</li>
+      <li>Clean, modern Qt-based interface with dark theme support</li>
     </ul>
   </description>
 
-  <launchable type="desktop-id">colorsmith.desktop</launchable>
+  <launchable type="desktop-id">com.ktechpit.colorsmith.desktop</launchable>
 
   <screenshots>
     <screenshot type="default">
@@ -33,6 +63,14 @@
     <screenshot>
       <image>https://github.com/keshavbhatt/colorsmith/blob/main/images/2.png?raw=true</image>
       <caption>Showing Gradient Maker Window</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/keshavbhatt/colorsmith/blob/main/images/3.png?raw=true</image>
+      <caption>Showing Radial Gradient Maker Window</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/keshavbhatt/colorsmith/blob/main/images/4.png?raw=true</image>
+      <caption>Showing About Dialog</caption>
     </screenshot>
   </screenshots>
 
@@ -54,17 +92,34 @@
     <keyword>rgb</keyword>
     <keyword>hex</keyword>
     <keyword>palette</keyword>
+    <keyword>gradient</keyword>
+    <keyword>design</keyword>
+    <keyword>hsv</keyword>
+    <keyword>hsl</keyword>
+    <keyword>cmyk</keyword>
+    <keyword>rgba</keyword>
+    <keyword>css</keyword>
+    <keyword>svg</keyword>
+    <keyword>eyedropper</keyword>
+    <keyword>colorpicker</keyword>
   </keywords>
 
   <releases>
     <release version="1.0.0" date="2026-01-27">
       <description>
-        <p>Initial release</p>
+        <p>Initial release of ColorSmith with comprehensive color management features</p>
         <ul>
-          <li>Color picking from screen</li>
-          <li>RGB and HEX color format support</li>
-          <li>Random color generation</li>
-          <li>Settings persistence</li>
+          <li>Screen color picker with system-wide color capture</li>
+          <li>Support for HEX, RGB, RGBA, HSL, HSLA, HSV, and CMYK color formats</li>
+          <li>Interactive HSV color plane with brightness adjustment</li>
+          <li>Gradient generator with linear and radial gradients</li>
+          <li>CSS, SVG, and PNG export for gradients</li>
+          <li>Palette management with import/export functionality</li>
+          <li>Image-to-palette extraction using K-means clustering</li>
+          <li>Random color and gradient generation</li>
+          <li>Recently picked colors history (24 colors)</li>
+          <li>Comprehensive keyboard shortcuts</li>
+          <li>Settings persistence for window geometry and last color</li>
         </ul>
       </description>
     </release>
