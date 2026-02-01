@@ -55,6 +55,11 @@
 
   <launchable type="desktop-id">com.ktechpit.colorsmith.desktop</launchable>
 
+  <branding>
+    <color type="primary" scheme_preference="light">#6A7CFF</color>
+    <color type="primary" scheme_preference="dark">#4B4FD9</color>
+  </branding>
+
   <screenshots>
     <screenshot type="default">
       <image>https://github.com/keshavbhatt/colorsmith/blob/main/images/1.png?raw=true</image>
