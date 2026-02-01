@@ -93,13 +93,12 @@ cmake -DBUILD_TESTING=ON ..
 
 ## Installation
 
-### Snap Store
+### Package Managers
 
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/colorsmith)
-
-```bash
-sudo snap install colorsmith
-```
+| Platform | Installation |
+|----------|-------------|
+| **Snap Store** | [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/colorsmith)<br>`sudo snap install colorsmith` |
+| **Flathub** | [![Download on Flathub](https://flathub.org/api/badge?locale=en)](https://flathub.org/en/apps/com.ktechpit.colorsmith)<br>`flatpak install flathub com.ktechpit.colorsmith` |
 
 ### From Source
 
