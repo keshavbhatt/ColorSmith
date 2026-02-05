@@ -13,6 +13,7 @@ class QLineEdit;
 class QLabel;
 class QFrame;
 class QVBoxLayout;
+class ScreenPicker;
 
 struct GradientStop {
   QColor color;
@@ -111,6 +112,8 @@ private slots:
   void onExportSVG();
   void onExportImage();
   void onPickColor();
+  void onScreenColorPicked(const QColor &color);
+  void onPickerError(const QString &message);
 
 private:
   void setupUI();
@@ -144,6 +147,7 @@ private:
   QPushButton *m_copySVGBtn;
   QPushButton *m_exportSVGBtn;
   QPushButton *m_exportImageBtn;
+  ScreenPicker *m_screenPicker;
 
   // State
   QVector<GradientStop> m_stops;

@@ -1,4 +1,5 @@
 #include "../include/GradientMaker.h"
+#include "../include/ScreenPicker.h"
 #include <QApplication>
 #include <QClipboard>
 #include <QColorDialog>
@@ -381,9 +382,16 @@ void GradientPreviewWidget::setupFullscreenCloseButton(
 
 // GradientMaker implementation
 GradientMaker::GradientMaker(QWidget *parent)
-  : QDialog(parent), m_gradientSlider(nullptr), m_rotation(45), m_type(Linear) {
+  : QDialog(parent), m_gradientSlider(nullptr), m_rotation(45), m_type(Linear),
+    m_screenPicker(new ScreenPicker(this)) {
   setWindowTitle(tr("Gradient Maker"));
   resize(700, 600);
+
+  // Connect ScreenPicker signals
+  connect(m_screenPicker, &ScreenPicker::colorPicked, this,
+          &GradientMaker::onScreenColorPicked);
+  connect(m_screenPicker, &ScreenPicker::errorOccurred, this,
+          &GradientMaker::onPickerError);
 
   setupUI();
 
@@ -846,15 +854,22 @@ void GradientMaker::onExportImage() {
 void GradientMaker::onPickColor() {
   int selectedIndex = m_gradientSlider->selectedStopIndex();
   if (selectedIndex >= 0 && selectedIndex < m_stops.size()) {
-    QColor color = QColorDialog::getColor(m_stops[selectedIndex].color, this,
-                                          tr("Select Color"));
-    if (color.isValid()) {
-      m_stops[selectedIndex].color = color;
-      m_colorInput->setText(color.name());
-      m_gradientSlider->setStops(m_stops);
-      updatePreview();
-    }
+    m_screenPicker->pickColor();
   }
+}
+
+void GradientMaker::onScreenColorPicked(const QColor &color) {
+  int selectedIndex = m_gradientSlider->selectedStopIndex();
+  if (selectedIndex >= 0 && selectedIndex < m_stops.size() && color.isValid()) {
+    m_stops[selectedIndex].color = color;
+    m_colorInput->setText(color.name());
+    m_gradientSlider->setStops(m_stops);
+    updatePreview();
+  }
+}
+
+void GradientMaker::onPickerError(const QString &message) {
+  qWarning() << "Screen picker error:" << message;
 }
 
 void GradientMaker::updatePreview() {
