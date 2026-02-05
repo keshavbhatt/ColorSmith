@@ -6,10 +6,11 @@
 
 class QLineEdit;
 class QLabel;
-class QSlider;
 class QSpinBox;
 class QPushButton;
 class QFrame;
+class HSLGradientSlider;
+class ScreenPicker;
 
 class ContrastChecker : public QDialog {
     Q_OBJECT
@@ -32,6 +33,9 @@ private slots:
     void onPickTextColor();
     void onPickBackgroundColor();
     void onSwapColors();
+    void onTextColorPicked(const QColor &color);
+    void onBackgroundColorPicked(const QColor &color);
+    void onPickerError(const QString &message);
     void updateContrastRatio();
 
 private:
@@ -45,7 +49,6 @@ private:
 
     double calculateContrastRatio(const QColor &foreground, const QColor &background);
     double calculateRelativeLuminance(const QColor &color);
-    QString getComplianceLevel(double ratio);
 
     void saveGeometry();
     void loadGeometry();
@@ -58,17 +61,17 @@ private:
     QFrame *m_contrastPreview;
 
     // Text color HSL sliders
-    QSlider *m_textHueSlider;
-    QSlider *m_textSatSlider;
-    QSlider *m_textLightSlider;
+    HSLGradientSlider *m_textHueSlider;
+    HSLGradientSlider *m_textSatSlider;
+    HSLGradientSlider *m_textLightSlider;
     QSpinBox *m_textHueSpin;
     QSpinBox *m_textSatSpin;
     QSpinBox *m_textLightSpin;
 
     // Background color HSL sliders
-    QSlider *m_bgHueSlider;
-    QSlider *m_bgSatSlider;
-    QSlider *m_bgLightSlider;
+    HSLGradientSlider *m_bgHueSlider;
+    HSLGradientSlider *m_bgSatSlider;
+    HSLGradientSlider *m_bgLightSlider;
     QSpinBox *m_bgHueSpin;
     QSpinBox *m_bgSatSpin;
     QSpinBox *m_bgLightSpin;
@@ -76,6 +79,9 @@ private:
     QPushButton *m_pickTextColorBtn;
     QPushButton *m_pickBgColorBtn;
     QPushButton *m_swapColorsBtn;
+
+    ScreenPicker *m_textScreenPicker;
+    ScreenPicker *m_bgScreenPicker;
 
     // Contrast ratio display
     QLabel *m_ratioLabel;

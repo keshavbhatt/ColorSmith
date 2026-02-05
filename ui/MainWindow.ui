@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>522</width>
+    <width>524</width>
     <height>357</height>
    </rect>
   </property>
@@ -560,9 +560,6 @@
    </property>
   </action>
   <action name="actionGradient">
-   <property name="icon">
-    <iconset theme="view-gradient-symbolic"/>
-   </property>
    <property name="text">
     <string>Gradient</string>
    </property>
@@ -574,9 +571,6 @@
    </property>
   </action>
   <action name="actionContrastChecker">
-   <property name="icon">
-    <iconset theme="contrast-symbolic"/>
-   </property>
    <property name="text">
     <string>Contrast Checker</string>
    </property>

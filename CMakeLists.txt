@@ -50,6 +50,7 @@ set(SOURCES
     src/BrightnessSliderWidget.cpp
     src/ShortcutsDialog.cpp
     src/ContrastChecker.cpp
+    src/HSLGradientSlider.cpp
 )
 
 # Headers
@@ -69,6 +70,7 @@ set(HEADERS
         include/BrightnessSliderWidget.h
         include/ShortcutsDialog.h
         include/ContrastChecker.h
+        include/HSLGradientSlider.h
 )
 
 # UI files
