@@ -3,6 +3,8 @@
 #include "../include/Palette.h"
 #include "../include/PaletteManager.h"
 
+#include <QApplication>
+#include <QClipboard>
 #include <QComboBox>
 #include <QFileDialog>
 #include <QGridLayout>
@@ -71,15 +73,23 @@ void ColorSwatch::mousePressEvent(QMouseEvent *event) {
 }
 
 void ColorSwatch::contextMenuEvent(QContextMenuEvent *event) {
-  if (m_readOnly) {
-    // No context menu for read-only swatches
-    return;
+  QMenu menu(this);
+
+  // Add copy action (available for all swatches)
+  const QAction *copyAction = menu.addAction(tr("Copy HEX"));
+
+  // Add remove action only for editable swatches
+  const QAction *removeAction = nullptr;
+  if (!m_readOnly) {
+    menu.addSeparator();
+    removeAction = menu.addAction(tr("Remove"));
   }
 
-  QMenu menu(this);
-  QAction *removeAction = menu.addAction(tr("Remove"));
-  QAction *selected = menu.exec(event->globalPos());
-  if (selected == removeAction) {
+  if (const QAction *selected = menu.exec(event->globalPos()); selected == copyAction) {
+    // Copy color code to clipboard
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->setText(m_color.name(QColor::HexArgb));
+  } else if (selected == removeAction) {
     emit removeRequested();
   }
 }
