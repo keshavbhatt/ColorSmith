@@ -3,6 +3,7 @@
 #include "../include/BrightnessSliderWidget.h"
 #include "../include/ColorLogic.h"
 #include "../include/ColorPreviewWidget.h"
+#include "../include/ContrastChecker.h"
 #include "../include/GradientMaker.h"
 #include "../include/Palette.h"
 #include "../include/PaletteManager.h"
@@ -49,6 +50,8 @@ MainWindow::MainWindow(QWidget *parent)
           &MainWindow::onRandomColorClicked);
   connect(ui->actionGradient, &QAction::triggered, this,
           &MainWindow::onGradientClicked);
+  connect(ui->actionContrastChecker, &QAction::triggered, this,
+          &MainWindow::onContrastCheckerClicked);
   connect(ui->actionKeyboardShortcuts, &QAction::triggered, this,
           &MainWindow::onKeyboardShortcutsClicked);
   connect(ui->actionAbout, &QAction::triggered, this,
@@ -439,6 +442,12 @@ void MainWindow::onGradientClicked() {
   GradientMaker *gradientMaker = new GradientMaker(this);
   gradientMaker->setAttribute(Qt::WA_DeleteOnClose);
   gradientMaker->show();
+}
+
+void MainWindow::onContrastCheckerClicked() {
+  ContrastChecker *contrastChecker = new ContrastChecker(this, m_currentColor);
+  contrastChecker->setAttribute(Qt::WA_DeleteOnClose);
+  contrastChecker->show();
 }
 
 void MainWindow::onPaletteColorSelected(const QColor &color) {

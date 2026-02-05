@@ -529,6 +529,7 @@
    <addaction name="separator"/>
    <addaction name="actionRandom"/>
    <addaction name="actionGradient"/>
+   <addaction name="actionContrastChecker"/>
    <addaction name="separator"/>
    <addaction name="actionKeyboardShortcuts"/>
    <addaction name="actionAbout"/>
@@ -570,6 +571,20 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionContrastChecker">
+   <property name="icon">
+    <iconset theme="contrast-symbolic"/>
+   </property>
+   <property name="text">
+    <string>Contrast Checker</string>
+   </property>
+   <property name="toolTip">
+    <string>Check color contrast ratio (WCAG)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
    </property>
   </action>
   <action name="actionAbout">

@@ -49,6 +49,7 @@ set(SOURCES
     src/GradientMaker.cpp
     src/BrightnessSliderWidget.cpp
     src/ShortcutsDialog.cpp
+    src/ContrastChecker.cpp
 )
 
 # Headers
@@ -67,6 +68,7 @@ set(HEADERS
         include/GradientMaker.h
         include/BrightnessSliderWidget.h
         include/ShortcutsDialog.h
+        include/ContrastChecker.h
 )
 
 # UI files
