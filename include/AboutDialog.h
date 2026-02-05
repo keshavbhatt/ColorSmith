@@ -19,6 +19,8 @@ private slots:
 
   void on_btnMoreApps_clicked();
 
+  void on_btnSourceCode_clicked();
+
 private:
   Ui::AboutDialog *ui;
 };

@@ -52,3 +52,9 @@ void AboutDialog::on_btnMoreApps_clicked() {
   QDesktopServices::openUrl(
       QUrl("https://ktechpit.com/USS/public/products.php"));
 }
+
+void AboutDialog::on_btnSourceCode_clicked() {
+  QDesktopServices::openUrl(
+      QUrl("https://github.com/keshavbhatt/ColorSmith"));
+}
+
