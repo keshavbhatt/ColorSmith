@@ -3,6 +3,7 @@
 
 #include <QFrame>
 #include <QColor>
+#include <QTimer>
 
 class ColorPreviewWidget : public QFrame {
     Q_OBJECT
@@ -15,9 +16,18 @@ public:
 
 protected:
     void paintEvent(QPaintEvent* event) override;
+    void enterEvent(QEnterEvent* event) override;
+    void leaveEvent(QEvent* event) override;
+
+private slots:
+    void showColorPreview();
 
 private:
+    void hideColorPreview();
+
     QColor m_color;
+    QWidget* m_previewPopup;
+    QTimer* m_hoverTimer;
 };
 
 #endif // COLORPREVIEWWIDGET_H
