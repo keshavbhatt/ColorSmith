@@ -39,6 +39,7 @@ private slots:
     void onBrightnessColorChanged(const QColor &color);
     void onResetBrightness();
     void onGradientClicked();
+    void onKeyboardShortcutsClicked();
 
     // Connected to ScreenPicker
     void onColorPicked(const QColor &color);

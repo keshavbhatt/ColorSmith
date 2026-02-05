@@ -9,6 +9,7 @@
 #include "../include/PaletteWidget.h"
 #include "../include/ScreenPicker.h"
 #include "../include/Settings.h"
+#include "../include/ShortcutsDialog.h"
 #include "../include/qthsvrectpicker.h"
 #include "ui_MainWindow.h"
 
@@ -48,6 +49,8 @@ MainWindow::MainWindow(QWidget *parent)
           &MainWindow::onRandomColorClicked);
   connect(ui->actionGradient, &QAction::triggered, this,
           &MainWindow::onGradientClicked);
+  connect(ui->actionKeyboardShortcuts, &QAction::triggered, this,
+          &MainWindow::onKeyboardShortcutsClicked);
   connect(ui->actionAbout, &QAction::triggered, this,
           &MainWindow::onAboutClicked);
 
@@ -419,6 +422,11 @@ void MainWindow::onRandomColorClicked() {
 void MainWindow::onAboutClicked() {
   AboutDialog aboutDialog(this);
   aboutDialog.exec();
+}
+
+void MainWindow::onKeyboardShortcutsClicked() {
+  ShortcutsDialog shortcutsDialog(this);
+  shortcutsDialog.exec();
 }
 
 void MainWindow::onGradientClicked() {

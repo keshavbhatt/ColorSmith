@@ -458,11 +458,11 @@
    </layout>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
-   <property name="movable">
-    <bool>false</bool>
-   </property>
    <property name="styleSheet">
     <string notr="true">QToolBar { border: none; }</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -474,6 +474,8 @@
    <addaction name="separator"/>
    <addaction name="actionRandom"/>
    <addaction name="actionGradient"/>
+   <addaction name="separator"/>
+   <addaction name="actionKeyboardShortcuts"/>
    <addaction name="actionAbout"/>
   </widget>
   <action name="actionPick_Color">
@@ -497,6 +499,9 @@
    <property name="toolTip">
     <string>Generate random color</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
   </action>
   <action name="actionGradient">
    <property name="icon">
@@ -515,6 +520,20 @@
   <action name="actionAbout">
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionKeyboardShortcuts">
+   <property name="text">
+    <string>Shortcuts</string>
+   </property>
+   <property name="iconText">
+    <string>Shortcuts</string>
+   </property>
+   <property name="toolTip">
+    <string>Show keyboard shortcuts</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+K</string>
    </property>
   </action>
   <action name="actionCopy">

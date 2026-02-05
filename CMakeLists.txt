@@ -47,7 +47,8 @@ set(SOURCES
     src/PaletteManager.cpp
     src/ColorExtractor.cpp
     src/GradientMaker.cpp
-        src/BrightnessSliderWidget.cpp
+    src/BrightnessSliderWidget.cpp
+    src/ShortcutsDialog.cpp
 )
 
 # Headers
@@ -65,6 +66,7 @@ set(HEADERS
         include/ColorExtractor.h
         include/GradientMaker.h
         include/BrightnessSliderWidget.h
+        include/ShortcutsDialog.h
 )
 
 # UI files
