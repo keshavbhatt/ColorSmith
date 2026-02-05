@@ -63,6 +63,7 @@ private:
     ScreenPicker *m_screenPicker;
     PaletteWidget *m_paletteWidget;
     ColorPreviewWidget *m_colorPreview;
+    ColorPreviewWidget *m_lastColorPreview;
     QtHsvRectPicker *m_colorPlane;
     BrightnessSliderWidget *m_brightnessSlider;
     QSplitter *m_splitter;

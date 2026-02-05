@@ -97,6 +97,10 @@ MainWindow::MainWindow(QWidget *parent)
   m_colorPreview = new ColorPreviewWidget(this);
   ui->colorPreviewFrame->layout()->addWidget(m_colorPreview);
 
+  // Replace the placeholder colorPreviewFrameLastColor with ColorPreviewWidget
+  m_lastColorPreview = new ColorPreviewWidget(this);
+  ui->colorPreviewFrameLastColor->layout()->addWidget(m_lastColorPreview);
+
   // Create and add QtHsvRectPicker
   m_colorPlane = new QtHsvRectPicker(this);
   ui->colorPlaneFrame->layout()->addWidget(m_colorPlane);
@@ -173,6 +177,8 @@ void MainWindow::updateColor(const QColor &color, bool updateOutputField,
   if (!skipBrightnessReset) {
     m_brightnessSlider->setColor(color);
     m_baseColorForBrightness = color;
+    // Update the "last color" preview to show the original color
+    m_lastColorPreview->setColor(color);
   }
 
   // Add color to recently picked colors (only when explicitly requested)
