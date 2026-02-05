@@ -17,6 +17,7 @@
 #include <QScrollArea>
 #include <QScrollBar>
 #include <QSpinBox>
+#include <QSplitter>
 #include <QStatusBar>
 #include <QTimer>
 
@@ -89,14 +90,6 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui->btnCopyColor, &QPushButton::clicked, this,
           &MainWindow::onCopyClicked);
 
-  // Add copy action to the line edit
-  // QAction *copyAction = new QAction(this);
-  // copyAction->setIcon(QIcon::fromTheme("edit-copy-symbolic"));
-  // copyAction->setToolTip(tr("Copy color"));
-  // copyAction->setShortcut(QKeySequence::Copy);
-  // connect(copyAction, &QAction::triggered, this, &MainWindow::onCopyClicked);
-  // ui->outputEdit->addAction(copyAction, QLineEdit::TrailingPosition);
-
   // Replace the placeholder colorPreview QFrame with our ColorPreviewWidget
   m_colorPreview = new ColorPreviewWidget(this);
   ui->colorPreviewFrame->layout()->addWidget(m_colorPreview);
@@ -128,6 +121,10 @@ MainWindow::MainWindow(QWidget *parent)
   PaletteManager::instance().loadPalettes();
   m_paletteWidget->setPalette(PaletteManager::instance().currentPalette());
 
+  // Setup the main splitter
+  m_splitter = ui->mainSplitter;
+  m_splitter->setChildrenCollapsible(false);
+  m_splitter->setHandleWidth(1);
 
   // Make statusbar always visible
   statusBar()->show();
@@ -157,7 +154,8 @@ void MainWindow::updateColor(const QColor &color, bool updateOutputField,
   // Update inputs including alpha
   QSpinBox *spins[] = {ui->spinR, ui->spinG, ui->spinB, ui->spinA};
   QSlider *sliders[] = {ui->sliderR, ui->sliderG, ui->sliderB, ui->sliderA};
-  const int values[] = {color.red(), color.green(), color.blue(), color.alpha()};
+  const int values[] = {color.red(), color.green(), color.blue(),
+                        color.alpha()};
 
   for (int i = 0; i < 4; i++) {
     spins[i]->blockSignals(true);
@@ -338,7 +336,8 @@ void MainWindow::onOutputTextChanged() {
     }
 
     // Manual color entry should NOT add to recent colors
-    // Update output field to show properly formatted color in the detected format
+    // Update output field to show properly formatted color in the detected
+    // format
     updateColor(newColor, true, false, false);
   }
 }
@@ -534,6 +533,12 @@ void MainWindow::loadSettings() {
       break;
     }
   }
+
+  // Restore splitter state
+  const QByteArray splitterState = settings.getSplitterState();
+  if (!splitterState.isEmpty()) {
+    m_splitter->restoreState(splitterState);
+  }
 }
 
 void MainWindow::saveSettings() const {
@@ -549,6 +554,9 @@ void MainWindow::saveSettings() const {
   // Save output mode (combobox selection)
   const QString outputMode = ui->comboOutput->currentData().toString();
   settings.setOutputMode(outputMode);
+
+  // Save splitter state
+  settings.setSplitterState(m_splitter->saveState());
 
   // Save palettes
   PaletteManager::instance().savePalettes();

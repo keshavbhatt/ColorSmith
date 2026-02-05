@@ -15,6 +15,7 @@ namespace Keys {
     constexpr const char* WINDOW_STATE = "window-state";
     constexpr const char* PALETTE_COLORS = "palette-colors";
     constexpr const char* CURRENT_PALETTE_ID = "current-palette-id";
+    constexpr const char* SPLITTER_STATE = "splitter-state";
 }
 
 // Settings manager class
@@ -44,6 +45,9 @@ public:
 
     QByteArray getWindowState() const;
     void setWindowState(const QByteArray& state);
+
+    QByteArray getSplitterState() const;
+    void setSplitterState(const QByteArray& state);
 
 private:
     Manager();

@@ -5,6 +5,7 @@
 #include <QColor>
 
 class QSpinBox;
+class QSplitter;
 
 namespace Ui {
 class MainWindow;
@@ -63,6 +64,7 @@ private:
     ColorPreviewWidget *m_colorPreview;
     QtHsvRectPicker *m_colorPlane;
     BrightnessSliderWidget *m_brightnessSlider;
+    QSplitter *m_splitter;
 
     QColor m_currentColor;
     QColor m_baseColorForBrightness;

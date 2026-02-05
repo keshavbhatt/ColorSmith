@@ -62,4 +62,12 @@ void Manager::setWindowState(const QByteArray& state) {
     m_settings.setValue(Keys::WINDOW_STATE, state);
 }
 
+QByteArray Manager::getSplitterState() const {
+    return m_settings.value(Keys::SPLITTER_STATE).toByteArray();
+}
+
+void Manager::setSplitterState(const QByteArray& state) {
+    m_settings.setValue(Keys::SPLITTER_STATE, state);
+}
+
 } // namespace Settings
