@@ -1,6 +1,7 @@
 # ColorSmith
 
-![Version](https://img.shields.io/badge/version-1.1.0-blue)
+![Downloads](https://img.shields.io/github/downloads/keshavbhatt/colorsmith/total)
+![Latest Release](https://img.shields.io/github/v/release/keshavbhatt/colorsmith)
 
 A professional color management suite for designers, developers, and digital artists. Built with Qt for Linux.
 
@@ -112,6 +113,13 @@ cmake -DBUILD_TESTING=ON ..
 |----------|-------------|
 | **Snap Store** | [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/colorsmith)<br>`sudo snap install colorsmith` |
 | **Flathub** | [![Download on Flathub](https://flathub.org/api/badge?locale=en)](https://flathub.org/en/apps/com.ktechpit.colorsmith)<br>`flatpak install flathub com.ktechpit.colorsmith` |
+
+### Windows Installation
+
+[![Download for Windows](https://img.shields.io/badge/Download-Windows%20Installer-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/keshavbhatt/ColorSmith/releases/download/v1.1.0/ColorSmith-Setup-v1.1.0-Win64.exe)
+
+Download the Windows installer (v1.1.0) or check the [Latest Release Page](https://github.com/keshavbhatt/colorsmith/releases/latest) for newer versions.
+
 
 ### From Source
 
