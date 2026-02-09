@@ -31,7 +31,8 @@ AboutDialog::AboutDialog(QWidget *parent)
       QString("Version %1").arg(COLORSMITH_VERSION_STRING));
 
   ui->descriptionLabel->setText(
-      "A simple and elegant color management application for your desktop");
+      "A professional color management suite for designers, developers, and digital artists. "
+      "Featuring precision color picking, WCAG-compliant contrast checking, gradient creation, and comprehensive palette management.");
 
   ui->copyrightLabel->setText(
       QString("© 2026 %1").arg(COLORSMITH_ORGANIZATION_NAME));

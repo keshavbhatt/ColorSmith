@@ -1,10 +1,21 @@
 name: colorsmith
 version: '1.1.0'
-summary: A modern color management application
+summary: Professional color management suite for designers and developers
 description: |
-  ColorSmith is a simple and elegant application for picking and managing colors.
-  It provides an intuitive interface to select colors from your screen, convert between
-  color formats (HEX, RGB), and copy color values to your clipboard.
+  ColorSmith is a professional color management suite designed for designers, developers, 
+  and digital artists. It delivers precision tools for color selection, WCAG-compliant 
+  accessibility testing, gradient creation, and comprehensive palette management.
+
+  Key Features:
+  • WCAG AA/AAA compliant contrast checker for accessible design
+  • Screen color picker with system-wide capture
+  • Interactive HSV color plane with visual HSL gradient sliders
+  • Support for HEX, RGB, RGBA, HSL, HSLA, HSV, and CMYK formats
+  • Smart paste detection that auto-converts color codes
+  • Gradient generator with CSS, SVG, and PNG export
+  • Palette management with image extraction and JSON import/export
+  • Comprehensive keyboard shortcuts and customizable layout
+  • Professional workflow tools with persistent settings
 
 grade: stable
 confinement: strict

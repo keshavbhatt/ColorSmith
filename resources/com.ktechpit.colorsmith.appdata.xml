@@ -12,19 +12,28 @@
 
   <description>
     <p>
-      ColorSmith is a comprehensive color management and design tool for developers, designers, and digital artists.
-      It provides an intuitive interface to pick colors, create gradients, manage palettes, and convert between
-      multiple color formats with professional-grade precision.
+      ColorSmith is a professional color management suite designed for designers, developers, and digital artists.
+      It delivers precision tools for color selection, accessibility testing, gradient creation, and palette management
+      with an intuitive interface built for professional workflows.
     </p>
+    <p>Professional Features:</p>
+    <ul>
+      <li>WCAG AA/AAA compliant contrast checker for accessible design</li>
+      <li>Visual HSL gradient sliders for intuitive color adjustments</li>
+      <li>Smart paste detection that automatically converts color codes between formats</li>
+      <li>Enhanced color preview with hover-to-enlarge functionality</li>
+      <li>Original color comparison to track color modifications</li>
+      <li>Context menu operations on palette swatches for streamlined workflow</li>
+    </ul>
     <p>Core Features:</p>
     <ul>
       <li>Screen color picker to capture colors from anywhere on your display</li>
-      <li>Interactive HSV color plane with brightness adjustment slider</li>
+      <li>Interactive HSV color plane with precision brightness adjustment slider</li>
       <li>Support for multiple color formats: HEX, RGB, RGBA, HSL, HSLA, HSV, and CMYK</li>
       <li>Transparency control with alpha channel support</li>
       <li>Random color generator for creative inspiration</li>
       <li>One-click color value copying to clipboard</li>
-      <li>Recently picked colors history (FIFO with 24 color limit)</li>
+      <li>Customizable resizable layout with persistent panel sizing</li>
     </ul>
     <p>Gradient Generator:</p>
     <ul>
@@ -34,7 +43,7 @@
       <li>Export as CSS code (with vendor prefixes and old WebKit syntax)</li>
       <li>Export as SVG files or PNG images with custom dimensions</li>
       <li>Random gradient generation</li>
-      <li>Color picker integration for gradient stops</li>
+      <li>Screen color picker integration for gradient stops</li>
     </ul>
     <p>Palette Management:</p>
     <ul>
@@ -44,12 +53,14 @@
       <li>Add optional names to palette colors for better organization</li>
       <li>Built-in standard HTML colors palette</li>
       <li>Quick add current color to any palette</li>
+      <li>Right-click context menu to copy or remove colors</li>
     </ul>
-    <p>Professional Tools:</p>
+    <p>Professional Workflow Tools:</p>
     <ul>
-      <li>Comprehensive keyboard shortcuts for efficient workflow</li>
-      <li>Persistent settings that remember window geometry and last used color</li>
-      <li>Clean, modern Qt-based interface with dark theme support</li>
+      <li>Comprehensive keyboard shortcuts (Ctrl+K to view all shortcuts)</li>
+      <li>Persistent settings that remember window geometry, panel sizes, and last used color</li>
+      <li>Clean, modern Qt-based interface with streamlined toolbar</li>
+      <li>Quick access to project documentation and source code</li>
     </ul>
   </description>
 
@@ -112,6 +123,24 @@
   </keywords>
 
   <releases>
+    <release version="1.1.0" date="2026-02-09">
+      <description>
+        <p>Major update with professional accessibility tools and workflow enhancements</p>
+        <ul>
+          <li>NEW: WCAG-compliant Color Contrast Checker with AA/AAA testing</li>
+          <li>NEW: Visual HSL gradient sliders for intuitive color adjustments</li>
+          <li>NEW: Smart paste detection that automatically converts color formats</li>
+          <li>NEW: Hover-to-enlarge color preview for better visualization</li>
+          <li>NEW: Original color comparison to track modifications</li>
+          <li>NEW: Keyboard Shortcuts dialog (Ctrl+K) for quick reference</li>
+          <li>NEW: Context menu on palette swatches to copy or remove colors</li>
+          <li>NEW: Screen picker integration in Gradient Maker and Contrast Checker</li>
+          <li>Enhanced: Resizable panels with persistent sizing preferences</li>
+          <li>Enhanced: Streamlined toolbar design without borders</li>
+          <li>Enhanced: Quick access to source code from About dialog</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.0" date="2026-01-27">
       <description>
         <p>Initial release of ColorSmith with comprehensive color management features</p>

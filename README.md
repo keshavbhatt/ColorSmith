@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/version-1.1.0-blue)
 
-A modern, elegant color picker application built with Qt for Linux.
+A professional color management suite for designers, developers, and digital artists. Built with Qt for Linux.
 
 ## Features
 

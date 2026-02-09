@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 project(colorsmith
     VERSION 1.1.0
-    DESCRIPTION "A modern Qt-based color picker application"
+    DESCRIPTION "Professional color management suite for designers, developers, and digital artists"
     LANGUAGES CXX
 )
 

@@ -2,9 +2,9 @@
 Version=1.0
 Type=Application
 Name=ColorSmith
-GenericName=Color Manager
-Comment=Professional color picker, gradient maker, and palette manager
-Keywords=color;picker;rgb;hex;palette;gradient;design;hsv;hsl;cmyk;rgba;css;svg;eyedropper;colorpicker;
+GenericName=Color Management Suite
+Comment=Professional color suite for designers, developers, and digital artists
+Keywords=color;picker;rgb;hex;palette;gradient;design;hsv;hsl;cmyk;rgba;css;svg;eyedropper;colorpicker;contrast;wcag;accessibility;
 Exec=colorsmith
 Icon=com.ktechpit.colorsmith
 Terminal=false

@@ -430,6 +430,8 @@ void MainWindow::onRandomColorClicked() {
 
 void MainWindow::onAboutClicked() {
   AboutDialog aboutDialog(this);
+  aboutDialog.adjustSize();
+  aboutDialog.setFixedSize(aboutDialog.size());
   aboutDialog.exec();
 }
 
