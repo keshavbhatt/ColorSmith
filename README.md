@@ -1,5 +1,7 @@
 # ColorSmith
 
+![Version](https://img.shields.io/badge/version-1.1.0-blue)
+
 A modern, elegant color picker application built with Qt for Linux.
 
 ## Features
@@ -14,6 +16,13 @@ A modern, elegant color picker application built with Qt for Linux.
 ### Color Formats & Conversion
 - 🔄 **Format Conversion**: Convert between HEX, RGB, and RGBA color formats
 - 📋 **Clipboard Support**: Copy color values with one click
+- 🎨 **Smart Paste Detection**: Automatically detects and converts pasted color codes between formats
+- 👁️ **Color Preview**: Hover over the color preview to see an enlarged view of the selected color
+- 🔄 **Original Color Comparison**: Compare current color with the original picked color to track changes
+
+### Accessibility Tools
+- ♿ **Color Contrast Checker**: Evaluate color combinations for text readability
+- 📊 **WCAG Compliance Testing**: Check contrast ratios against WCAG AA and AAA standards
 
 ### Gradient Maker
 - 🌈 **Linear & Radial Gradients**: Create beautiful linear and radial gradients
@@ -33,12 +42,16 @@ A modern, elegant color picker application built with Qt for Linux.
 - ✏️ **Palette Operations**: Create, rename, delete, and clear palettes
 - 🔖 **Named Colors**: Add optional names to palette colors
 - 📚 **Multiple Palettes**: Switch between different palettes easily
+- 📋 **Context Menu Actions**: Right-click swatches to copy color codes or remove colors
 
 ### User Interface
 - 🎚️ **Precision Controls**: Adjust RGB values using sliders and spin boxes
 - ⌨️ **Keyboard Shortcuts**: Comprehensive keyboard navigation and shortcuts
-- 💾 **Settings Persistence**: Remembers your last used color and window geometry
-- 🎨 **Intuitive Design**: Clean, modern Qt-based interface
+- 📖 **Shortcuts Dialog**: View all available keyboard shortcuts in a dedicated dialog (Help → Keyboard Shortcuts)
+- 🔧 **Resizable Panels**: Adjustable splitter for customizing layout between color picker and palettes
+- 💾 **Settings Persistence**: Remembers your last used color, window geometry, and panel sizes
+- 🎨 **Intuitive Design**: Clean, modern Qt-based interface with streamlined toolbar
+- 🔗 **Quick Access**: Easy access to source code and project information from About dialog
 
 ## Screenshots
 
@@ -121,6 +134,8 @@ colorsmith
 #### General Actions
 - `Ctrl+C`: Copy current color to clipboard
 - `Ctrl+P`: Pick color from screen
+- `Ctrl+Shift+C`: Open Color Contrast Checker
+- `Ctrl+K`: Show Keyboard Shortcuts dialog
 
 #### RGB(A) Spinbox Inputs
 When the cursor is inside any R / G / B / A field:
