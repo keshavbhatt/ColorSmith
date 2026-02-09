@@ -42,10 +42,11 @@ void ShortcutsDialog::setupUI() {
 
     // General Actions
     QList<QPair<QString, QString>> generalShortcuts = {
-        {tr("Ctrl+P"), tr("Pick color from screen")},
-        {tr("Ctrl+G"), tr("Open Gradient Maker")},
         {tr("Ctrl+C"), tr("Copy current color")},
+        {tr("Ctrl+P"), tr("Pick color from screen")},
         {tr("Ctrl+R"), tr("Generate random color")},
+        {tr("Ctrl+G"), tr("Open Gradient Maker")},
+        {tr("Ctrl+Shift+C"), tr("Open Contrast Checker")},
         {tr("Ctrl+K"), tr("Open this Keyboard Shortcuts dialog")}
     };
     addShortcutSection(scrollLayout, tr("General"), generalShortcuts);
