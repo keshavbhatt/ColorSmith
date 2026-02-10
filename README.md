@@ -1,6 +1,5 @@
 # ColorSmith
 
-![Downloads](https://img.shields.io/github/downloads/keshavbhatt/colorsmith/total)
 ![Latest Release](https://img.shields.io/github/v/release/keshavbhatt/colorsmith)
 
 A professional color management suite for designers, developers, and digital artists. Built with Qt for Linux.
