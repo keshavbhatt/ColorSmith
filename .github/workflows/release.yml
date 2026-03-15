@@ -237,5 +237,5 @@ jobs:
             ColorSmith-Setup-${{ github.ref_name }}-Win64.exe
             ColorSmith-Portable-${{ github.ref_name }}-Win64.zip
             checksums.txt
-          retention-days: 30
+          retention-days: 1
 
